@@ -7,7 +7,9 @@
 // Implement a callback to process pointcloud messages
 void customizedPointCloudMsgCb(SickScanApiHandle apiHandle, const SickScanPointCloudMsg* msg)
 {
-  std::cout << "C++ PointCloudMsgCb: " << msg->width << " x " << msg->height << " pointcloud message received" << std::endl; // data processing to be done
+  std::cout << "C++ PointCloudMsgCb: " << msg->width << " X " << msg->height << " pointcloud message received" << std::endl; // data processing to be done
+  std::cout << "size: " << msg->fields.size << std::endl;
+  std::cout << "buffer->count: " << msg->fields.buffer->count << std::endl;
 }
 
 int main(int argc, char** argv)

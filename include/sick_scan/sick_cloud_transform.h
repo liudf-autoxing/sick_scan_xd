@@ -154,8 +154,8 @@ namespace sick_scan
         bool m_add_transform_check_dynamic_updates = false;           // True: ros parameter "add_transform_xyz_rpy" can be updated during runtime by "rosparam set", False: parameter "add_transform_xyz_rpy" configured by launchfile only
         bool m_cartesian_input_only = false;                          // currently configured parameter cartesian_input_only
         bool m_apply_3x3_rotation = false;                            // true, if the 3x3 rotation_matrix has to be applied, otherwise false (default)
-        Vector3D m_translation_vector = { 0, 0, 0 };                  // translational part x,y,z of the 6D pose, default: 0
-        Matrix3x3 m_rotation_matrix = { 1, 0, 0, 0, 1, 0, 0, 0, 1 };  // rotational part roll,pitch,yaw by 3x3 rotation matrix, default: 3x3 identity
+        Vector3D m_translation_vector = {{ 0, 0, 0 }};                  // translational part x,y,z of the 6D pose, default: 0
+        Matrix3x3 m_rotation_matrix = {{ {{1, 0, 0}}, {{0, 1, 0}}, {{0, 0, 1}} }};  // rotational part roll,pitch,yaw by 3x3 rotation matrix, default: 3x3 identity
         float m_azimuth_offset = 0; // azimuth offset, i.e. yaw in [rad], if only yaw is configured (in this case an offset can be added to the lidar azimuth before conversion to cartesian pointcloud, which is faster than a 3x3 matrix multiplication)
 
     }; // class SickCloudTransform
